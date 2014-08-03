@@ -10,7 +10,13 @@ Smartsos::Application.routes.draw do
     resources :pledges, only: [:new, :create]
   end
 
+	resources :items, only: [:create]
+
   resources :donors, only: [:new, :create]
+
+  resources :password_resets
+
+  resources :confirm_account
 
   # SESSION ROUTES
   get '/sessions/login/organizations' => 'sessions#organizations_login', as: :organizations_login
